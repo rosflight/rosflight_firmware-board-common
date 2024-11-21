@@ -32,8 +32,6 @@
 #ifndef ROSFLIGHT_FIRMWARE_BOARD_H
 #define ROSFLIGHT_FIRMWARE_BOARD_H
 
-#include "state_manager.h"
-
 #include <cstdbool>
 #include <cstddef>
 #include <cstdint>
