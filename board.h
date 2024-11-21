@@ -38,7 +38,7 @@
 #include <cstddef>
 #include <cstdint>
 
-#include <rosflight_structs.h>
+#include "rosflight_structs.h"
 
 namespace rosflight_firmware
 {
