@@ -165,7 +165,7 @@ typedef struct
 } got_flags;
 
 // 16 analog + 8 digital MUST BE > 14 (Mavlink message size is hardware to 14)
-#define RC_STRUCT_CHANNELS  24
+#define RC_STRUCT_CHANNELS 24
 typedef struct //__attribute__((packed))
 {
   uint64_t timestamp; // us, time of data read complete
@@ -175,7 +175,6 @@ typedef struct //__attribute__((packed))
   bool failsafeActivated;
 } RcStruct;
 
-
 typedef struct //__attribute__((__packed__))
 {
   uint64_t timestamp; // us, time of data read complete
@@ -183,7 +182,6 @@ typedef struct //__attribute__((__packed__))
   float rate[3];
 } AttitudeStruct;
 
-}
-
+} // namespace rosflight_firmware
 
 #endif /* INCLUDE_INTERFACE_ROSFLIGHT_STRUCTS_H_ */
