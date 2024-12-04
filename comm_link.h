@@ -44,7 +44,7 @@ namespace rosflight_firmware
 {
 class CommLinkInterface
 {
-#define cast_in_range(val, type)                                                                                       \
+#define cast_in_range(val, type)                                                                   \
   (static_cast<uint32_t>(val) < static_cast<uint32_t>(type::END)) ? static_cast<type>(val) : type::END
 
 public:
@@ -92,14 +92,14 @@ public:
 
   enum class OffboardControlMode // c.f., MAVlink OFFBOARD_CONTROL_MODE
   {
-    MODE_PASS_THROUGH = 0,                        /* Pass commanded values directly to actuators | */
+    MODE_PASS_THROUGH = 0, /* Pass commanded values directly to actuators | */
     MODE_ROLLRATE_PITCHRATE_YAWRATE_THROTTLE = 1, /* Command roll rate, pitch rate, yaw rate, and throttle | */
     MODE_ROLL_PITCH_YAWRATE_THROTTLE = 2,         /* Command roll angle, pitch angle, yaw rate, and throttle | */
     MODE_ROLL_PITCH_YAWRATE_ALTITUDE = 3, /* Command roll angle, pitch angle, yaw rate, and altitude above ground | */
     MODE_XVEL_YVEL_YAWRATE_ALTITUDE =
       4, /* Command body-fixed, x and y velocity, and yaw rate, and altitude above ground | */
     MODE_XPOS_YPOS_YAW_ALTITUDE =
-      5,     /* Command inertial x, y position (m) wrt origin, yaw angle wrt north, and altitude above ground | */
+      5, /* Command inertial x, y position (m) wrt origin, yaw angle wrt north, and altitude above ground | */
     END = 6, /*  | */
   };
 
@@ -205,11 +205,11 @@ public:
 
   virtual void send_mag(uint8_t system_id, const MagStruct & mag) = 0;
 
-  virtual void send_named_value_int(uint8_t system_id, uint64_t timestamp_us, const char * const name,
-                                    int32_t value) = 0;
-
-  virtual void send_named_value_float(uint8_t system_id, uint64_t timestamp_us, const char * const name,
-                                      float value) = 0;
+//  virtual void send_named_value_int(uint8_t system_id, uint64_t timestamp_us, const char * const name,
+//                                    int32_t value) = 0;
+//
+//  virtual void send_named_value_float(uint8_t system_id, uint64_t timestamp_us, const char * const name,
+//                                      float value) = 0;
 
   virtual void send_output_raw(uint8_t system_id, const RcStruct & rc) = 0;
 
